@@ -4,6 +4,8 @@ const config = require('../config');
 
 const githubStrategy = new Strategy(config.githubAuth,
 function(accessToken, refreshToken, profile, done) {
+  // после того как flow passporta отработал (пользватель перешёл на github, заполнил форму, его данные отправляются по адресу кот. указан у нас в конфиге, и этот адрес уже здесь обрабатывается)
+  // данные из githuba находся в profile
   return User
     .findOne({'githubId': profile.id})
     .then(user => user ? user : new User({githubId: profile.id, username: profile.username}).save())

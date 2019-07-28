@@ -8,7 +8,9 @@ const checkAuthentication = require('./lib/checkAuthentication');
 
 const app = express();
 
+// This is legacy code from older examples that isn't needed with Mongoose 5
 mongoose.Promise = global.Promise;
+
 mongoose.connect(config.database, {
     useMongoClient: true,
 });

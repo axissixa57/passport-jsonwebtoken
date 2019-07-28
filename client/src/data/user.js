@@ -1,3 +1,4 @@
+// нужен чтобы держать данные в классе когда залогинился
 class User {
   constructor () {
     this.userdata = {
@@ -20,4 +21,4 @@ class User {
 
 const user = new User();
 
-export default user; 
+export default user;

@@ -3,10 +3,11 @@ import service from '../service';
 export const onLocalAuth = action => e => {
   e.preventDefault();
   const form = document.forms.form;
+  // обращение к тегу name
   const password = form.password.value;
   const username = form.username.value;
   service.post(action, {username, password})
-    .then(() => window.location.assign('#login-success'))
+    .then(() => window.location.assign('#login-success')) // http://localhost:3001/#login-success
     .catch(console.log);
 }
 

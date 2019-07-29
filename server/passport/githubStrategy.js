@@ -9,6 +9,7 @@ function(accessToken, refreshToken, profile, done) {
   return User
     .findOne({'githubId': profile.id})
     .then(user => user ? user : new User({githubId: profile.id, username: profile.username}).save())
+    // запишет данные пользователя в req.user
     .then(data => done(null, data.toJSON()))
     .catch(err => done(err) );
   }

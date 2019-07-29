@@ -28,7 +28,8 @@
     },
     "comments": {
       "githubAuth": "в этом разделе содержаться какие-то метаданные, кот. нужны провайдеру, чтобы он понял откуда мы пришли. Во-первых, что этому серверу можно доверять",
-      "githubAuth.clientSecret": "отдаст провайдер из Client Secret на github.com -> dev settings",
+      "githubAuth.clientID": "данные сформированные на gihub",
+      "githubAuth.clientSecret": "данные сформированные на gihub, отдаст провайдер из Client Secret на github.com -> dev settings",
       "githubAuth.callbackURL":"указываем (разрабом) тот url куда придёт github после того как user правильно заполнил форму(авторизации)"
     }
 }

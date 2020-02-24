@@ -10,8 +10,8 @@
         "session": false
     },
     "githubAuth": {
-        "clientID": "6cd8cd5cd9ddef2a3145",
-        "clientSecret": "1578a069e5229eae4c563653ee4ffbd67c86693a",
+        "clientID": "3660c0e31526319496ae",
+        "clientSecret": "8179d70fb4767c100997d57e8410e202109b354a",
         "callbackURL": "http://localhost:3005/api/auth/github/callback"
     },
     "secret": "passport-test",
@@ -28,8 +28,9 @@
     },
     "comments": {
       "githubAuth": "в этом разделе содержаться какие-то метаданные, кот. нужны провайдеру, чтобы он понял откуда мы пришли. Во-первых, что этому серверу можно доверять",
-      "githubAuth.clientID": "данные сформированные на gihub",
-      "githubAuth.clientSecret": "данные сформированные на gihub, отдаст провайдер из Client Secret на github.com -> dev settings",
-      "githubAuth.callbackURL":"указываем (разрабом) тот url куда придёт github после того как user правильно заполнил форму(авторизации)"
+      "githubAuth.clientID": "данные сформированные на gihub. Settings -> Developer settings -> OAuth Apps. Client ID",
+      "githubAuth.clientSecret": "данные сформированные на gihub, отдаст провайдер из Client Secret на github.com: Settings -> Developer settings -> OAuth Apps",
+      "githubAuth.callbackURL":"указываем (разрабом) тот url куда придёт github после того как user правильно заполнил форму(авторизации)",
+      "localAuth.session": "сериализация и десериализация работает только со стратегиями, для которых задан атрибут {session: true}"
     }
 }

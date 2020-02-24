@@ -23,8 +23,9 @@ exports.register = async (req, res, next) => {
 };
 
 exports.logout = (req, res) => {
-    req.logout();
+    req.logout(); // passport
     res.clearCookie('auth');
+    res.clearCookie('connect.sid');
     res.send('Ok');
 };
 

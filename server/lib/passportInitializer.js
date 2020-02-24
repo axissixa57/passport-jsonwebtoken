@@ -3,16 +3,18 @@
 // Passport does not impose any restrictions on how your user records are stored. Instead, you provide functions to Passport which implements the necessary serialization and deserialization logic. In a typical application, this will be as simple as serializing the user ID, and finding the user by ID when deserializing.
 
 const passportInitializer = (passport, ...strategies) => {
-        // после того как отработала стратегия, данные о юзере записались в req.user благодаря passport,
-        // здесь они достаются и записываются в user
-        passport.serializeUser((user, done) => {
-          done(null, user)
-        });
-        passport.deserializeUser((user, done) => done(null, user));
-        strategies.forEach(strategy => {
-            passport.use(strategy);
-        })
-    };
+  strategies.forEach(strategy => {
+    passport.use(strategy);
+  });
+  // после того как отработала стратегия, данные о юзере записались в req.user благодаря passport,
+  // здесь они достаются и записываются в user
+  passport.serializeUser((user, done) => {
+    done(null, user);
+  });
+  passport.deserializeUser((user, done) => {
+    done(null, user);
+  });
+};
 
 module.exports = passportInitializer;
 
